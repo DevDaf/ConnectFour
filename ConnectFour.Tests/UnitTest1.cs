@@ -9,13 +9,13 @@ namespace ConnectFour.Tests
         [Fact]
         public void CheckForWin_NoWinner_EmptyBoard()
         {
-            // Arrange
+
             var gameState = new GameState();
 
-            // Act
+
             var result = gameState.CheckForWin();
 
-            // Assert
+
             Assert.Equal(GameState.WinState.No_Winner, result);
 
         }
@@ -23,10 +23,9 @@ namespace ConnectFour.Tests
         [Fact]
         public void CheckForWin_TieGame()
         {
-            // Arrange
+
             var gameState = new GameState();
 
-            // Play pieces to fill the board without a win
             for (int col = 0; col < 7; col++)
             {
                 for (int row = 0; row < 6; row++)
@@ -35,10 +34,10 @@ namespace ConnectFour.Tests
                 }
             }
 
-            // Act
+
             var result = gameState.CheckForWin();
 
-            // Assert
+
             Assert.Equal(GameState.WinState.Tie, result);
         }
     }
